@@ -6,6 +6,10 @@ const app = express();
 // CONNECT DATABASE
 connectDB();
 
+// MIDDLEWARE
+// allows for receiving body in post requests to routes
+app.use(express.json({ extended: false }));
+
 app.get('/', (req, res) => res.send(`API RUNNING`));
 
 // DEFINE ROUTES
