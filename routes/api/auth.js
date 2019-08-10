@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 
 // @route   GET api/auth
-// @desc    Test route
+// @desc    Test route that uses custom auth middleware.
 // @access  Public
 router.get(`/`, auth, async (req, res) => {
     try {
@@ -45,9 +45,8 @@ router.post(
         const { email, password } = req.body;
 
         try {
-            // Check if user DOES NOT exist; return error
             let user = await User.findOne({ email }); // returns a promise, need await
-            if(!user) {
+            if(!user) { // Check if user DOES NOT exist; return error
                 // The json is formatted to match the validation error format for consistency
                 return res.status(400).json({ errors: [{ msg: 'Invalid Credentials'}]});
             }
