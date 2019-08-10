@@ -15,7 +15,7 @@ router.get(`/`, auth, async (req, res) => {
     try {
         /** 
          * Already added the 'user' key/value to req object in auth middleware, 
-         * so we're invoking it again here as an argument 'req.user.id'. 
+         * so we're invoking that user property here as an argument 'req.user.id'. 
          * 
          * select('-password') removes password from the query. 
         */ 

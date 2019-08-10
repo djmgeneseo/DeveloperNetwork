@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken');
 const config = require('config');
 
+/**
+ * @desc Is user logged in? If so, their request should have a header with a valid x-auth-token.
+ */
 module.exports = function(req, res, next) {
     // Get token from header
     const token = req.header('x-auth-token');
