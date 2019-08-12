@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../../models/User');
 
 // @route   GET api/auth
-// @desc    Test route that uses custom auth middleware.
+// @desc    Retrieves user information from mongodb.
 // @access  Public
 router.get(`/`, auth, async (req, res) => {
     try {
