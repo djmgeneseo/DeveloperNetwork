@@ -1,6 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
+//import axios from 'axios';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
       console.log(formData)
-    }
+  }
 
   return <Fragment>
     <h1 className="large text-primary">Log In</h1>
