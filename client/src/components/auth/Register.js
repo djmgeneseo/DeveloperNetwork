@@ -7,7 +7,8 @@ import PropTypes from 'prop-types'
 
 //import axios from 'axios';
 
-// same as calling props param, but deconstructing in parameters to pull just props.setAlert 
+// same as calling props param, but deconstructing in parameters to pull just props.setAlert
+// Redux actions 'setAlert' and 'register'
 const Register = ({setAlert, register}) => {
   const [formData, setFormData] = useState({
     name: '',
@@ -35,12 +36,12 @@ const Register = ({setAlert, register}) => {
       <form className="form" onSubmit={ e => onSubmit(e)}>
         <div className="form-group">
           <input type="text" placeholder="Name" name="name" onChange={e => onChange(e)} value={name} 
-          //required 
+          required 
           />
         </div>
         <div className="form-group">
           <input type="email" placeholder="Email Address" name="email" value={email} onChange={e => onChange(e)} 
-          //required
+          required
           />
           <small className="form-text"
             >This site uses Gravatar so if you want a profile image, use a
@@ -55,7 +56,7 @@ const Register = ({setAlert, register}) => {
             minLength="6"
             onChange={e => onChange(e)}
             value={password}
-            //required
+            required
           />
         </div>
         <div className="form-group">
@@ -66,7 +67,7 @@ const Register = ({setAlert, register}) => {
             minLength="6"
             value={password2}
             onChange={e => onChange(e)}
-            //required
+            required
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
@@ -82,6 +83,7 @@ Register.propTypes = {
   register: PropTypes.func.isRequired
 }
 
+// Redux actions 'setAlert' and 'register'
 export default connect(null, {setAlert, register})(Register);
 
 /* const oldOnSubmit = async e => {

@@ -5,7 +5,7 @@ import {
 } from './types'
 import {setAlert} from './alert'
 
-// Register the User
+// Register the User. What is used inside of component/function to initiate redux process.
 // Using async b/c of axios
 export const register = ({ name, email, password }) => async dispatch => {
   const config = {
